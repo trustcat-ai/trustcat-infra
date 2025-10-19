@@ -12,10 +12,7 @@
             box-sizing: border-box; 
         }
         
-        @font-face {
-            font-family: 'JetBrains Mono';
-            src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-        }
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
         
         body {
             font-family: 'JetBrains Mono', 'Courier New', monospace;
@@ -40,22 +37,30 @@
         
         .header {
             border: 1px solid #00ff00;
-            padding: 40px;
+            padding: 40px 20px;
             margin-bottom: 40px;
             background: rgba(0, 255, 0, 0.02);
+            text-align: center;
         }
         
         .logo {
-            font-size: 3rem;
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+        
+        .cat-subtitle {
+            font-size: 1.8rem;
+            color: #00ff00;
             font-weight: bold;
             margin-bottom: 10px;
-            text-align: center;
         }
         
         .tagline {
-            text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #00aa00;
+            letter-spacing: 2px;
         }
         
         .stats-grid {
@@ -174,7 +179,8 @@
         }
         
         @media (max-width: 768px) {
-            .logo { font-size: 2rem; }
+            .logo { font-size: 2.5rem; letter-spacing: 4px; }
+            .cat-subtitle { font-size: 1.2rem; }
             .stat-value { font-size: 1.8rem; }
             .header { padding: 20px; }
             .section { padding: 20px; }
@@ -185,21 +191,15 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <pre class="logo">
- ████████╗██████╗ ██╗   ██╗███████╗████████╗ ██████╗ █████╗ ████████╗
- ╚══██╔══╝██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔════╝██╔══██╗╚══██╔══╝
-    ██║   ██████╔╝██║   ██║███████╗   ██║   ██║     ███████║   ██║   
-    ██║   ██╔══██╗██║   ██║╚════██║   ██║   ██║     ██╔══██║   ██║   
-    ██║   ██║  ██║╚██████╔╝███████║   ██║   ╚██████╗██║  ██║   ██║   
-    ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝   ╚═╝   
-            </pre>
+            <div class="logo">TRUSTCAT.AI</div>
+            <div class="cat-subtitle">[ C · A · T ]</div>
             <div class="tagline">COMPUTE · ADOPTION · TRUST<span class="cursor">█</span></div>
         </div>
 
         <!-- Stats -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-label">GPU Rigs</div>
+                <div class="stat-label">GPU RIGS</div>
                 <div class="stat-value">30</div>
             </div>
             <div class="stat-card">
@@ -207,11 +207,11 @@
                 <div class="stat-value">LIVE</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Blockchain</div>
+                <div class="stat-label">BLOCKCHAIN</div>
                 <div class="stat-value">6 BLK</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Payment</div>
+                <div class="stat-label">PAYMENT</div>
                 <div class="stat-value">USDC</div>
             </div>
         </div>
