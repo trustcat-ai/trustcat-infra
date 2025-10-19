@@ -7,26 +7,40 @@ export async function fetchBlocks(): Promise<Block[]> {
   let blockNum = 0;
   let consecutiveErrors = 0;
   
-  while (consecutiveErrors < 3) {
+  console.log('Starting to fetch blocks from GitHub...');
+  
+  while (consecutiveErrors < 3 && blockNum < 20) { // Max 20 blocks to avoid infinite loop
     try {
-      const response = await fetch(`${GITHUB_RAW_BASE}/block-${blockNum}.json`, {
-        cache: 'no-store' // Always fetch fresh for now
+      const url = `${GITHUB_RAW_BASE}/block-${blockNum}.json`;
+      console.log(`Fetching block ${blockNum} from:`, url);
+      
+      const response = await fetch(url, {
+        cache: 'no-store',
+        headers: {
+          'Accept': 'application/json',
+        }
       });
+      
+      console.log(`Block ${blockNum} response status:`, response.status);
       
       if (response.ok) {
         const block = await response.json();
+        console.log(`Block ${blockNum} loaded successfully`, block);
         blocks.push(block);
         consecutiveErrors = 0;
       } else {
+        console.log(`Block ${blockNum} not found (${response.status})`);
         consecutiveErrors++;
       }
       blockNum++;
     } catch (err) {
+      console.error(`Error fetching block ${blockNum}:`, err);
       consecutiveErrors++;
       blockNum++;
     }
   }
   
+  console.log(`Total blocks loaded: ${blocks.length}`);
   return blocks.reverse(); // Newest first
 }
 
