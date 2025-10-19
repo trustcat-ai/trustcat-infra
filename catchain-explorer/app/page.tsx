@@ -1,14 +1,41 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { Block, ChainStats } from './lib/types';
 import { fetchBlocks, calculateStats } from './lib/blockchain';
 import StatsGrid from './components/StatsGrid';
 import BlockCard from './components/BlockCard';
 import Link from 'next/link';
-import Image from 'next/image';
 
-export const revalidate = 0;
+// Force static export
+export const dynamic = 'error';
 
-export default async function Home() {
-  const blocks = await fetchBlocks();
-  const stats = calculateStats(blocks);
+export default function Home() {
+  const [blocks, setBlocks] = useState<Block[]>([]);
+  const [stats, setStats] = useState<ChainStats>({
+    totalBlocks: 0,
+    totalProviders: 0,
+    totalJobs: 0,
+    totalUSDC: 0,
+    totalBrokers: 0,
+    totalGrants: 0,
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadBlocks() {
+      try {
+        const fetchedBlocks = await fetchBlocks();
+        setBlocks(fetchedBlocks);
+        setStats(calculateStats(fetchedBlocks));
+      } catch (error) {
+        console.error('Error loading blocks:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadBlocks();
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -91,10 +118,16 @@ export default async function Home() {
 
         {/* Blocks */}
         <div className="space-y-6">
-          {blocks.length === 0 ? (
+          {loading ? (
             <div className="glass-card p-12 text-center">
               <p className="text-2xl text-dark-muted animate-pulse-slow">
                 Loading blocks from CatChain...
+              </p>
+            </div>
+          ) : blocks.length === 0 ? (
+            <div className="glass-card p-12 text-center">
+              <p className="text-2xl text-dark-muted">
+                No blocks found. Check GitHub repository.
               </p>
             </div>
           ) : (
