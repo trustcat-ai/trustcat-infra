@@ -1,0 +1,21 @@
+{
+  "block_number": 0,
+  "timestamp": "2025-10-19T16:25:33.629293+00:00",
+  "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "block_hash": "422be3c42e379ca08289fc2c8a610fe97d6e2534faacab48211f5b8b26e0c88b",
+  "transactions": [
+    {
+      "type": "provider_registration",
+      "provider_id": "provider_003",
+      "rig_specs": {
+        "gpu": "RTX 5090",
+        "cpu": "AMD 7950X",
+        "ram_gb": 64
+      },
+      "catchain_address": "0xABC123DEF456",
+      "registration_fee_usdc": 100,
+      "timestamp": "2025-10-19T16:25:33.629181+00:00"
+    }
+  ],
+  "transaction_count": 1
+}

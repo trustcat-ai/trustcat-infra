@@ -1,0 +1,22 @@
+{
+  "block_number": 2,
+  "timestamp": "2025-10-19T16:27:32.956280+00:00",
+  "previous_hash": "a95a1a9db83bbe74fc08213cbdc550d04c1a1214e81290b1d0cede90eee15086",
+  "block_hash": "5f0ebde2d6caa64acebe6115c4f68d7bfa2693e17b372029fbcf17d2d64abbbe",
+  "transactions": [
+    {
+      "type": "compute_job",
+      "job_id": "job_12345",
+      "client_id": "client_abc",
+      "provider_id": "provider_003",
+      "broker_id": null,
+      "duration_hours": 24,
+      "cost_usdc": 500.0,
+      "broker_commission_usdc": 0,
+      "provider_payout_usdc": 500.0,
+      "start_time": "2025-10-19T16:27:32.956091+00:00",
+      "timestamp": "2025-10-19T16:27:32.956101+00:00"
+    }
+  ],
+  "transaction_count": 1
+}

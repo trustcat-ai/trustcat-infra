@@ -1,0 +1,17 @@
+{
+  "block_number": 4,
+  "timestamp": "2025-10-19T16:27:51.547733+00:00",
+  "previous_hash": "44f30cee3b12c1e2640be96a86c75ac216b4fee35121c6070467794ea8d6aac9",
+  "block_hash": "ece9c2e4900a83315dd17bd5984bb04c8988b81af0e97bb3c73fe3e957014e37",
+  "transactions": [
+    {
+      "type": "broker_registration",
+      "broker_id": "broker_xyz",
+      "broker_name": "Crypto Bros LLC",
+      "commission_rate": 0.05,
+      "catchain_address": "0x111222333444",
+      "timestamp": "2025-10-19T16:27:51.547548+00:00"
+    }
+  ],
+  "transaction_count": 1
+}
