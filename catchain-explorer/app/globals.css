@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-dark text-dark-text antialiased;
+    font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-gradient-card backdrop-blur-xl border border-dark-border rounded-2xl;
+    box-shadow: 0 4px 24px 0 rgba(74, 158, 255, 0.1);
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-primary-cat hover:shadow-2xl hover:shadow-primary-cat/20 hover:-translate-y-1;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-purple bg-clip-text text-transparent;
+  }
+  
+  .hash-box {
+    @apply font-mono bg-black/50 px-4 py-2 rounded-lg text-sm border border-dark-border break-all;
+  }
+  
+  .stat-card {
+    @apply glass-card-hover p-6;
+  }
+  
+  .block-card {
+    @apply glass-card p-6 space-y-4;
+  }
+  
+  .tx-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  }
+}
+
+/* Scrollbar - Terminal style */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a9eff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #667eea;
+}
+
+/* Selection */
+::selection {
+  background: rgba(74, 158, 255, 0.3);
+  color: white;
+}
+
+/* Terminal cursor blink effect */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '▋';
+  animation: blink 1s infinite;
+  color: #4a9eff;
+}
