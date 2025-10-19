@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCat.ai | Compute Infrastructure</title>
+    <meta name="description" content="Enterprise GPU compute. USDC payments. Immutable ledger.">
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            background: #000;
+            color: #00ff00;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 255, 0, 0.03) 0px,
+                    transparent 1px,
+                    transparent 2px,
+                    rgba(0, 255, 0, 0.03) 3px
+                );
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            border: 1px solid #00ff00;
+            padding: 40px;
+            margin-bottom: 40px;
+            background: rgba(0, 255, 0, 0.02);
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .tagline {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #00aa00;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            border: 1px solid #00ff00;
+            padding: 30px;
+            text-align: center;
+            background: rgba(0, 255, 0, 0.02);
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            background: rgba(0, 255, 0, 0.05);
+            transform: translateY(-5px);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #00aa00;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .section {
+            border: 1px solid #00ff00;
+            padding: 40px;
+            margin-bottom: 20px;
+            background: rgba(0, 255, 0, 0.02);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #00ff00;
+        }
+        
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .link {
+            display: block;
+            border: 1px solid #00ff00;
+            padding: 20px;
+            text-decoration: none;
+            color: #00ff00;
+            text-align: center;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .link:hover {
+            background: #00ff00;
+            color: #000;
+        }
+        
+        .link.primary {
+            background: #00ff00;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .link.primary:hover {
+            background: transparent;
+            color: #00ff00;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        }
+        
+        .feature-list li:before {
+            content: "→ ";
+            color: #00aa00;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #00ff00;
+            margin-top: 40px;
+            color: #00aa00;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .logo { font-size: 2rem; }
+            .stat-value { font-size: 1.8rem; }
+            .header { padding: 20px; }
+            .section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <pre class="logo">
+ ████████╗██████╗ ██╗   ██╗███████╗████████╗ ██████╗ █████╗ ████████╗
+ ╚══██╔══╝██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔════╝██╔══██╗╚══██╔══╝
+    ██║   ██████╔╝██║   ██║███████╗   ██║   ██║     ███████║   ██║   
+    ██║   ██╔══██╗██║   ██║╚════██║   ██║   ██║     ██╔══██║   ██║   
+    ██║   ██║  ██║╚██████╔╝███████║   ██║   ╚██████╗██║  ██║   ██║   
+    ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝    ╚═════╝╚═╝  ╚═╝   ╚═╝   
+            </pre>
+            <div class="tagline">COMPUTE · ADOPTION · TRUST<span class="cursor">█</span></div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">GPU Rigs</div>
+                <div class="stat-value">30</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">RTX 5090</div>
+                <div class="stat-value">LIVE</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Blockchain</div>
+                <div class="stat-value">6 BLK</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Payment</div>
+                <div class="stat-value">USDC</div>
+            </div>
+        </div>
+
+        <!-- CatChain Section -->
+        <div class="section">
+            <div class="section-title">CATCHAIN BLOCK EXPLORER</div>
+            <p style="margin-bottom: 20px;">Every compute transaction logged immutably. Full transparency. Cryptographic verification.</p>
+            <a href="https://catchain.trustcat.ai" class="link primary">→ VIEW BLOCK EXPLORER</a>
+        </div>
+
+        <!-- Infrastructure -->
+        <div class="section">
+            <div class="section-title">INFRASTRUCTURE</div>
+            <ul class="feature-list">
+                <li>30x RTX 5090 GPUs in k3s cluster</li>
+                <li>Docker/SSH/k8s access for clients</li>
+                <li>USDC payments only - no shitcoins</li>
+                <li>Provider revenue: 95% | Broker commission: 5%</li>
+                <li>$950 USDC grants for first-time AI clients</li>
+                <li>Immutable job logging via CatChain</li>
+            </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="section">
+            <div class="section-title">QUICK ACCESS</div>
+            <div class="link-grid">
+                <a href="https://github.com/trustcat-ai/trustcat-infra/tree/main/docs" class="link">DOCS</a>
+                <a href="https://github.com/trustcat-ai/trustcat-infra" class="link">GITHUB</a>
+                <a href="https://x.com/TrustCatAI" class="link">@TRUSTCATAI</a>
+                <a href="https://catchain.trustcat.ai" class="link">EXPLORER</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>TrustCat.ai | k3s cluster · immutable ledger · enterprise compute</div>
+            <div style="margin-top: 10px;">No shitcoins. No rugs. Just math.</div>
+        </div>
+    </div>
+</body>
+</html>
