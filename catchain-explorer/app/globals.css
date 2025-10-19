@@ -3,75 +3,78 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+  
   body {
-    @apply bg-gradient-dark text-dark-text antialiased;
-    font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+    @apply bg-black text-green-400 antialiased;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 255, 0, 0.03) 3px
+      );
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-gradient-card backdrop-blur-xl border border-dark-border rounded-2xl;
-    box-shadow: 0 4px 24px 0 rgba(74, 158, 255, 0.1);
+  .terminal-box {
+    @apply border border-green-500/30 bg-black/50 p-4;
   }
   
-  .glass-card-hover {
-    @apply glass-card transition-all duration-300 hover:border-primary-cat hover:shadow-2xl hover:shadow-primary-cat/20 hover:-translate-y-1;
+  .terminal-header {
+    @apply border-b border-green-500/30 pb-2 mb-4 text-green-400;
   }
   
-  .gradient-text {
-    @apply bg-gradient-purple bg-clip-text text-transparent;
+  .hash-display {
+    @apply font-mono text-xs text-green-300/70 break-all;
   }
   
-  .hash-box {
-    @apply font-mono bg-black/50 px-4 py-2 rounded-lg text-sm border border-dark-border break-all;
+  .stat-box {
+    @apply terminal-box text-center;
   }
   
-  .stat-card {
-    @apply glass-card-hover p-6;
+  .block-box {
+    @apply terminal-box mb-4;
   }
   
-  .block-card {
-    @apply glass-card p-6 space-y-4;
-  }
-  
-  .tx-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  .tx-row {
+    @apply border-l-2 border-green-500 pl-3 py-2 mb-2 bg-green-500/5;
   }
 }
 
 /* Scrollbar - Terminal style */
 ::-webkit-scrollbar {
   width: 8px;
+  background: #000;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #001100;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a9eff;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #667eea;
+  background: #00ff00;
+  border: 1px solid #000;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(74, 158, 255, 0.3);
-  color: white;
+  background: rgba(0, 255, 0, 0.3);
+  color: #00ff00;
 }
 
-/* Terminal cursor blink effect */
+/* Cursor blink */
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
 
-.cursor-blink::after {
-  content: '▋';
+.cursor::after {
+  content: '█';
   animation: blink 1s infinite;
-  color: #4a9eff;
+  color: #00ff00;
 }
