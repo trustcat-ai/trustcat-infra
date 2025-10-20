@@ -209,7 +209,7 @@ TrustCat.ai Compute Ledger | Immutable Infrastructure Log
     <p className="text-dark-muted">
       CatChain: An immutable ledger for compute transactions
     </p>
-    <p className="text-sm text-green-400 font-semibold">
+    <p className="text-sm text-terminal-green font-semibold">
       Powered by the Microscalers
     </p>
     <p className="text-sm text-dark-muted">
