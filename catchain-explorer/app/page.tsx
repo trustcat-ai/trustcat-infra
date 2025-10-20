@@ -189,11 +189,31 @@ TrustCat.ai Compute Ledger | Immutable Infrastructure Log
         )}
       </div>
 
-      {/* Footer */}
-      <div className="terminal-box mt-8 text-xs text-center text-green-600">
-        <div>TrustCat.ai | Immutable Compute Infrastructure</div>
-        <div className="mt-1">No shitcoins. No rugs. Just math.</div>
+      <footer className="border-t border-dark-border mt-20 py-12">
+  <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
+    <div className="flex justify-center items-center gap-3 mb-4">
+      <div className="w-8 h-8">
+        <svg viewBox="0 0 200 200" className="w-full h-full opacity-60">
+          <path
+            d="M100 40 C80 40, 60 50, 50 70 L50 100 C50 120, 60 140, 80 150 L100 160 L120 150 C140 140, 150 120, 150 100 L150 70 C150 50, 140 40, 120 40 L100 40 Z M70 80 C70 75, 72 70, 76 70 C80 70, 82 75, 82 80 C82 85, 80 90, 76 90 C72 90, 70 85, 70 80 Z M118 80 C118 75, 120 70, 124 70 C128 70, 130 75, 130 80 C130 85, 128 90, 124 90 C120 90, 118 85, 118 80 Z M100 110 L90 115 C85 117, 80 115, 78 110 M100 110 L110 115 C115 117, 120 115, 122 110"
+            stroke="#4a9eff"
+            strokeWidth="3"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </div>
+      <span className="text-lg font-semibold text-dark-text">TrustCat.ai</span>
     </div>
-  );
-}
+    <p className="text-dark-muted">
+      CatChain: An immutable ledger for compute transactions
+    </p>
+    <p className="text-sm text-green-400 font-semibold">
+      Powered by the Microscalers
+    </p>
+    <p className="text-sm text-dark-muted">
+      Own Your Compute · Decentralized Infrastructure
+    </p>
+  </div>
+</footer>

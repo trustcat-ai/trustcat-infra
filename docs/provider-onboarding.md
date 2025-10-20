@@ -1,4 +1,7 @@
-# Provider Onboarding — Plug Your Rigs Into TrustCat.ai
+# Microscaler Onboarding — Plug Your Rigs Into TrustCat.ai
+
+**Own Your Compute · Powered by microscalers.eth**
+
 
 Got high-end GPU compute sitting idle? Turn it into **USDC revenue** by joining the TrustCat.ai compute network.
 

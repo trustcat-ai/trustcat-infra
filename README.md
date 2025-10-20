@@ -85,3 +85,21 @@ Just **compute**, **adoption incentives**, and **blockchain-backed trust**.
 ---
 
 *The Trust Train is leaving the station. Are you on board?* 🚂
+
+---
+
+## Powered by the Microscalers
+
+TrustCat.ai infrastructure is powered by **microscalers** - independent compute providers who own and operate their hardware. 
+
+**microscalers.eth** | **microscaler.eth**
+
+**Own Your Compute. Decentralized Infrastructure.**
+
+Each microscaler:
+- Owns their hardware
+- Earns 95% revenue
+- Gets immutable CatChain registration
+- Operates independently
+
+TrustCat.ai provides the marketplace. Microscalers provide the compute.
