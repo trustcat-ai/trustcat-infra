@@ -1,0 +1,21 @@
+{
+  "block_number": 7,
+  "timestamp": "2025-10-20T01:54:09.561565+00:00",
+  "previous_hash": "4f50837aad74d72be6164a39d53f8da1bb0c0f4dbf4db87c51154f60a34be0a9",
+  "block_hash": "392bff6aa27bd8fade47abd66f0b335302634b2237155096598e882b7869d9a3",
+  "transactions": [
+    {
+      "type": "provider_registration",
+      "provider_id": "mc52",
+      "rig_specs": {
+        "gpu": "Qubic-Miner",
+        "cpu": "262MH/s",
+        "ram_gb": 0
+      },
+      "catchain_address": "bc1qt...ftsre",
+      "registration_fee_usdc": 100,
+      "timestamp": "2025-10-20T01:54:09.561362+00:00"
+    }
+  ],
+  "transaction_count": 1
+}
